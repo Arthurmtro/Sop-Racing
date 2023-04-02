@@ -119,7 +119,9 @@ const TabShop = (props: IETabShop) => {
           </TableCell>
         ))}
 
-        <TableCell>{Math.ceil(defineWeights(props.item))}</TableCell>
+        <TableCell>
+          {Math.ceil(defineWeights(props.item.statistiques))}
+        </TableCell>
 
         <TableCell>
           <b>${props.item.sellingPrice}</b>

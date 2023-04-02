@@ -1,8 +1,8 @@
-import { IEItem } from "../types/state";
+import { IEItemStatistique } from "../types/state";
 
-export const defineWeights = (item: IEItem) => {
+export const defineWeights = (statistiques: IEItemStatistique[]) => {
   return (
-    item?.statistiques?.reduce((acc, stat) => {
+    statistiques?.reduce((acc, stat) => {
       console.log("stat.type", stat.type);
       switch (stat.type) {
         case "Power":
@@ -23,6 +23,6 @@ export const defineWeights = (item: IEItem) => {
         default:
           return acc;
       }
-    }, 0) ?? 0
+    }, -100) ?? 0
   );
 };

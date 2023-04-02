@@ -41,7 +41,6 @@ const Profil = () => {
       });
     });
 
-    console.log("totalStats", totalStats);
     return totalStats;
   };
 
@@ -49,7 +48,7 @@ const Profil = () => {
 
   return (
     <>
-      <Typography variant="h4">Stop this mobile</Typography>
+      <Typography variant="body1">Stop this mobile</Typography>
       <Container
         style={{
           display: "flex",
@@ -58,22 +57,22 @@ const Profil = () => {
         }}
       >
         <div>
-          {exploded && (
-            <img
-              src="/assets/items/kits/chassis.png"
-              alt=""
-              style={{
-                width: "15rem",
-                height: "15rem",
-                position: "absolute",
-                top: "10rem",
-                left: "10rem",
-                zIndex: "5",
-              }}
-              onMouseOver={() => setExploded(true)}
-              onMouseOut={() => setExploded(false)}
-            />
-          )}
+          <img
+            src="/assets/items/kits/chassis.png"
+            alt=""
+            style={{
+              width: "15rem",
+              height: "15rem",
+              position: "absolute",
+              top: "10rem",
+              left: "10rem",
+              zIndex: "5",
+              opacity: exploded ? 1 : 0,
+              transition: "opacity 200ms ease-in",
+            }}
+            onMouseOver={() => setExploded(true)}
+            onMouseOut={() => setExploded(false)}
+          />
           <img
             src={`${
               equipedItems?.find((i) => i.type === "Bodywork")?.image

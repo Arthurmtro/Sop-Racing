@@ -47,7 +47,7 @@ export interface IEItem {
   image: string;
   rarity: string;
   buyed?: boolean;
-  statistiques?: [IEItemStatistique];
+  statistiques?: IEItemStatistique[];
   status: string;
   seller: string;
 }
@@ -108,7 +108,7 @@ export interface IERace {
 }
 
 export interface IESection {
-  type: string;
+  type: "Straight" | "Turn" | "Uphill" | "Downhill" | "Sharp turn";
   terrain: string;
 }
 

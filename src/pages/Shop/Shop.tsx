@@ -105,7 +105,7 @@ export default function Shop() {
         // @ts-ignore
         EnergyConsumption: item.statistiques[6].value,
 
-        total: Math.ceil(defineWeights(item)),
+        total: Math.ceil(defineWeights(item.statistiques)),
 
         status: item.status,
         seller: item.seller,
